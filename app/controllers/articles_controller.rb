@@ -17,14 +17,14 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.save
     
-        redirect_to article_path(@article)
+        redirect_to article_path(@article)             #links to the
 
     end
 
     def destroy
         @article = Article.find(params[:id])
-        @article.delete
+        @article.destroy                                #destroys the article
 
-        redirect_to articles_path
+        redirect_to articles_path                   #Links to the articles overview
     end
 end
